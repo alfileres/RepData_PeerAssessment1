@@ -7,10 +7,11 @@ output:
 
 
 ## Loading and preprocessing the data
-Assuming that the file "activity.csv" is already available in the same directory, we proceed to read the file.
+Assuming that the file "repdata-data-activity.zip" is already available in the same directory, we proceed to read the file.
 Since the date is initially interpreted as factors, it is needed to convert it to Date format. 
 'preprocessed' contains the raw data with the date in the correct format.
 ```{r echo=TRUE}
+unzip("repdata-data-activity.zip")
 raw <- read.csv("activity.csv")
 dates <- as.Date(raw$date, "%Y-%m-%d")
 preprocessed <- raw
